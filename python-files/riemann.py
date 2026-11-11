@@ -11,9 +11,15 @@ class Riemann:
         
         Complex Exponents
         n^s = n^(a+bi) = (n^a)(n^bi) = (n^a)(exp(ln(bi))) = (n^a)()
-
         '''
-        s = self.number 
+
+        s = self.number
+        sum=0
+        term_2= Complex.Exp(Complex.Log(s))
+        for n in range(5):
+            real = n**s.real 
+
+        
 
 
 

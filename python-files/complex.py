@@ -30,18 +30,25 @@ class Complex:
         result.imag = (-self.real*other.imag + self.imag*other.real)/length
 
         return result
-    
-    def polar_form(self):
 
-        r= np.sqrt((self.real**2) + (self.imag**2))
-        theta = np.atan(self.imag/self.real)
-
+    @staticmethod
+    def polar_form(z:Complex):
+        r= np.sqrt((z.real**2) + (z.imag**2))
+        theta = np.atan(z.imag/z.real)
         return Complex(r*np.cos(theta),r*np.sin(theta))
-
-    def Log(self):
+    
+    @staticmethod
+    def Exp(z:Complex): 
+        result =Complex(0.0,0.0)
+        result.real = np.exp(z.real)*np.cos(z.imag)
+        result.imag = np.exp(z.real)*np.sin(z.imag)
+        return result
+    
+    @staticmethod
+    def Log(z:Complex):
         result = Complex(0.0,0.0)
-        r = self.real**2 + self.imag**2
-        theta = np.atan(self.imag/self.real)
+        r = z.real**2 + z.imag**2
+        theta = np.atan(z.imag/z.real)
         result.real = np.ln(r)
         result.imag=theta
         return result
