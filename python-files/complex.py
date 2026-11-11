@@ -37,6 +37,15 @@ class Complex:
         theta = np.atan(self.imag/self.real)
 
         return Complex(r*np.cos(theta),r*np.sin(theta))
+
+    def Log(self):
+        result = Complex(0.0,0.0)
+        r = self.real**2 + self.imag**2
+        theta = np.atan(self.imag/self.real)
+        result.real = np.ln(r)
+        result.imag=theta
+        return result
+        
 def print_complex_number(c : Complex):
     print(f"{c.real} + {c.imag}i")
 
