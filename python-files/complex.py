@@ -15,6 +15,22 @@ class Complex:
         result.real=(self.real*other.real)-(self.imag*other.imag)
         result.imag=(self.real*other.imag)+(self.imag*other.real)
         return result 
+    def __pow__(self,other):
+        result = Complex(0.0,0.0)
+        a = self.real
+        b = self.imag 
+        c = other.real
+        d = other.imag 
+
+        r = np.sqrt(a**2 + b**2)
+        theta = np.atan(b/a)
+        result.real = (r**c)*(np.exp(-d*theta))*np.cos(c*theta + d*np.ln(r))
+        result.imag = (r**c)*(np.exp(-d*theta))*np.sin(c*theta + d*np.ln(r))
+
+        return result
+
+
+
         
     def __sub__(self, other):
         result = Complex(0.0, 0.0)

@@ -15,9 +15,10 @@ class Riemann:
 
         s = self.number
         sum=0
-        term_2= Complex.Exp(Complex.Log(s))
+        print(f"Initial Sum S = {sum}")
         for n in range(5):
-            real = n**s.real 
+            sum+=n**s
+            print("Sum at n = {n} => S = {sum}")
 
         
 
