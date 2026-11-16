@@ -1,4 +1,4 @@
-from complex import Complex
+from complex import Complex, print_complex_number
 
 
 class Riemann:
@@ -14,11 +14,14 @@ class Riemann:
         '''
 
         s = self.number
-        sum=0
+        sum=Complex(0.0,0.0)
         print(f"Initial Sum S = {sum}")
-        for n in range(5):
-            sum+=n**s
-            print("Sum at n = {n} => S = {sum}")
+        for n in range(1,100,1):
+            n_complex = Complex(n,0.0)
+            sum+=Complex(1.0,0.0)/(n_complex**s)
+            print(f"Sum at n = {n}")
+            print_complex_number(sum)
+            print()
 
         
 
@@ -28,7 +31,9 @@ class Riemann:
 
 
 def main(): 
-    pass
+    s = Riemann(1.0,1.0)
+    s.zeta_function()
+    
 
 if __name__=="__main__": 
     main()
